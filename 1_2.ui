@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>399</width>
+    <height>308</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>401</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <widget class="QWidget" name="skalar">
+    <attribute name="title">
+     <string>Скаляр</string>
+    </attribute>
+    <widget class="QDoubleSpinBox" name="aSkolar">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="bSkolar">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Summ">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>10</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Сумма A и B</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>A</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>B</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Inver">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>40</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Инверсия A</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>264</x>
+       <y>70</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Произведение A и B</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Stepen">
+     <property name="geometry">
+      <rect>
+       <x>244</x>
+       <y>100</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Возведение в степень </string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Koren">
+     <property name="geometry">
+      <rect>
+       <x>264</x>
+       <y>130</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Вычисление корня</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="FunkTregonomer">
+     <property name="geometry">
+      <rect>
+       <x>174</x>
+       <y>160</y>
+       <width>201</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Расчет тригонометрических функций</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>161</width>
+       <height>61</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="vector">
+    <attribute name="title">
+     <string>Вектор</string>
+    </attribute>
+    <widget class="QPushButton" name="SkolarVector">
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>10</y>
+       <width>171</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Умножение вектора на скаляр</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SummVector">
+     <property name="geometry">
+      <rect>
+       <x>234</x>
+       <y>40</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Поэлементное сложение</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="MullVector">
+     <property name="geometry">
+      <rect>
+       <x>234</x>
+       <y>70</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Поэлементное умножение</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="MullVectorArray">
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>100</y>
+       <width>171</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Умножение вектора на матрицу</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="MullVectorVector">
+     <property name="geometry">
+      <rect>
+       <x>234</x>
+       <y>130</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Скалярное произведение</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="VectorMull3D">
+     <property name="geometry">
+      <rect>
+       <x>234</x>
+       <y>160</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Векторное произведение</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DilinnaVectora">
+     <property name="geometry">
+      <rect>
+       <x>224</x>
+       <y>190</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Вычисление длины вектора</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="VectoSoNoprav">
+     <property name="geometry">
+      <rect>
+       <x>164</x>
+       <y>220</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Проверка сонаправленности векторов</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="OrtoganalVectora">
+     <property name="geometry">
+      <rect>
+       <x>154</x>
+       <y>250</y>
+       <width>221</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Проверка векторов на ортогональность</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>81</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>10</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Сколяр</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="array">
+    <attribute name="title">
+     <string>Массив</string>
+    </attribute>
+    <widget class="QDoubleSpinBox" name="doubleSpinBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>81</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>10</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Сколяр</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ArrayScolar">
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>10</y>
+       <width>171</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Умножение матрицы на скаляр</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ArraySumm">
+     <property name="geometry">
+      <rect>
+       <x>234</x>
+       <y>40</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Поэлементное сложение</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="PoElemArrayMull">
+     <property name="geometry">
+      <rect>
+       <x>214</x>
+       <y>70</y>
+       <width>161</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Поэлементное произведение</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="VectorArray">
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>100</y>
+       <width>171</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Умножение вектора на матрицу</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="MullArray">
+     <property name="geometry">
+      <rect>
+       <x>224</x>
+       <y>130</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Матричное произведение</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SledAndOpred">
+     <property name="geometry">
+      <rect>
+       <x>184</x>
+       <y>160</y>
+       <width>191</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Вычисление следа и определителя</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Yarra">
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>190</y>
+       <width>171</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Вычисление обратной матрицы</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="TArray">
+     <property name="geometry">
+      <rect>
+       <x>264</x>
+       <y>220</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Транспонирование</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>161</width>
+       <height>161</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
