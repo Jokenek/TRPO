@@ -259,15 +259,19 @@ class Vector:
         f.close()
         dataEND = pd.read_csv("end.csv", sep=";", header=None)
         end = dataEND.values.tolist()[0]
+        flag = 0
         for i in range(n-1):
             if(end[i]!=end[i+1]):
                 form.textBrowser_3.setText('Данные вектора не сонаправленные')
+                flag = 1
                 break
-            if (end[i]<0):
-                form.textBrowser_3.setText('Данные вектора не сонаправленные')
-                break
-            if (i==n-2):
-                form.textBrowser_3.setText('Данные вектора сонаправленные')
+        if (flag == 0):
+            for i in range(n):
+                if (end[i]<0):
+                    form.textBrowser_3.setText('Данные вектора не сонаправленные')
+                    break
+                if (i==n-1):
+                    form.textBrowser_3.setText('Данные вектора сонаправленные')
     def Ortogon(self):
         dataA = pd.read_csv("a.csv", sep=";", header=None)
         a = dataA.values.tolist()[0]
@@ -282,6 +286,22 @@ class Vector:
             form.textBrowser_3.setText('Вектора ортогональны, так как их скалярное произведение равно нулю.')
         else:
             form.textBrowser_3.setText('Вектора не ортогональны, так как их скалярное произведение не равно нулю.')
+    def VectornoeProizv(self):
+        dataA = pd.read_csv("a.csv", sep=";", header=None)
+        a = dataA.values.tolist()[0]
+        dataB = pd.read_csv("b.csv", sep=";", header=None)
+        b = dataB.values.tolist()[0]
+        l = dataA.shape
+        k = dataB.shape
+        m = k[1]
+        n = l[1]
+        if ((n==3)&(m==3)):
+            x = a[1] * b[2] - a[2] * b[1]
+            y = a[2] * b[0] - a[0] * b[2]
+            z = a[0] * b[1] - a[1] * b[0]
+            form.textBrowser_3.setText(str(x) + '; ' + str(y) + '; ' + str(z))
+        else:
+            form.textBrowser_3.setText('Введите трехмерных вектор')
 
 #Вызов метода в форме
 form.Summ.clicked.connect(Skalar.summAB)
@@ -306,4 +326,5 @@ form.MullVectorVector.clicked.connect(Vector.SkalarProizv)
 form.DilinnaVectora.clicked.connect(Vector.DlinnaVectora)
 form.VectoSoNoprav.clicked.connect(Vector.CoNapravlen)
 form.OrtoganalVectora.clicked.connect(Vector.Ortogon)
+form.VectorMull3D.clicked.connect(Vector.VectornoeProizv)
 app.exec()
