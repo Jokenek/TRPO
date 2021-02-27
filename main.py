@@ -2,7 +2,9 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication
 import pandas as pd
 from math import sqrt
-
+import math
+from numpy import linalg
+import numpy as np
 Form, Window = uic.loadUiType("1_2.ui")
 
 app = QApplication([])
@@ -38,7 +40,17 @@ class Skalar:
         dataB = form.bSkolar.value()
         A = dataA ** (1/dataB)
         form.textBrowser.setText(str(A))
-    #def Tregonomer():
+    def Tregonomer(self):
+        dataA = form.aSkolar.value()
+        sin = math.sin(dataA)
+        cos = math.cos(dataA)
+        tg = math.tan(dataA)
+        try:
+            ctg = math.cos(dataA) / math.sin(dataA)
+        except ZeroDivisionError:
+            ctg = '-'
+        form.textBrowser.setText('sin(A)= ' + str(sin) +'\n'+ 'cos(A)= ' + str(cos) +'\n'
+                                 +'tg(A)= ' + str(tg) +'\n'+'ctg(A)= ' + str(ctg) +'\n')
 
 #Все операции матриц
 class Ar:
@@ -70,7 +82,7 @@ class Ar:
         skalar = form.doubleSpinBox.value()
         a = dataA.shape
         m = a[1]
-        n = [0]
+        n = a[0]
         f = open('end.csv', 'w')
         for j in range(n):
             for i in range(m):
@@ -140,8 +152,20 @@ class Ar:
         form.textBrowser_2.setText(str(dataEND))
     def arrayATr(self):
         dataA = pd.read_csv("a.csv", sep=";", header=None)
-        dataA.T.to_csv('end.csv',sep =';',header = False, index = False)
+        dataA.T.to_csv('end.csv', sep =';', header = False, index = False)
         form.textBrowser_2.setText(str(dataA.T))
+    def opred(self):
+        dataA = pd.read_csv("a.csv", sep=";", header=None).to_numpy()
+        b = np.linalg.det(dataA)
+        opred=round(b,3)
+        tr=np.trace(dataA)
+        form.textBrowser_2.setText('Определитель: ' + str(opred)+'\n'+'След: ' + str(tr))
+    def obrat(self):
+        dataA = pd.read_csv("a.csv", sep=";", header=None).to_numpy()
+        b = np.linalg.inv(dataA)
+        b=np.round(b,3)
+        end =pd.DataFrame(data=b)
+        form.textBrowser_2.setText(str(end))
 
 #Все операции вектора
 class Vector:
@@ -295,7 +319,7 @@ class Vector:
         k = dataB.shape
         m = k[1]
         n = l[1]
-        if ((n==3)&(m==3)):
+        if ((n == 3) & (m == 3)):
             x = a[1] * b[2] - a[2] * b[1]
             y = a[2] * b[0] - a[0] * b[2]
             z = a[0] * b[1] - a[1] * b[0]
@@ -309,7 +333,7 @@ form.Inver.clicked.connect(Skalar._A)
 form.pushButton_3.clicked.connect(Skalar.AB)
 form.Stepen.clicked.connect(Skalar.AstepenB)
 form.Koren.clicked.connect(Skalar.korenAB)
-#form.FunkTregonomer.clicked.connect(Skalar.Tregonomer)
+form.FunkTregonomer.clicked.connect(Skalar.Tregonomer)
 
 form.MullArray.clicked.connect(Ar.arrayAB)
 form.ArrayScolar.clicked.connect(Ar.arrayASkalar)
@@ -317,6 +341,8 @@ form.ArraySumm.clicked.connect(Ar.arrayAsummB)
 form.PoElemArrayMull.clicked.connect(Ar.arrayAmullB)
 form.VectorArray.clicked.connect(Ar.arrayAVector)
 form.TArray.clicked.connect(Ar.arrayATr)
+form.SledAndOpred.clicked.connect(Ar.opred)
+form.Yarra.clicked.connect(Ar.obrat)
 
 form.SkolarVector.clicked.connect(Vector.vectorSkalar)
 form.SummVector.clicked.connect(Vector.vectorSumm)

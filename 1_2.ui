@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="skalar">
     <attribute name="title">
@@ -43,7 +43,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>50</y>
+       <y>40</y>
        <width>62</width>
        <height>22</height>
       </rect>
@@ -79,7 +79,7 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>50</y>
+       <y>40</y>
        <width>47</width>
        <height>13</height>
       </rect>
@@ -157,9 +157,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>80</y>
-       <width>161</width>
-       <height>61</height>
+       <y>70</y>
+       <width>181</width>
+       <height>81</height>
       </rect>
      </property>
     </widget>
