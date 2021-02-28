@@ -326,7 +326,22 @@ class Vector:
             form.textBrowser_3.setText(str(x) + '; ' + str(y) + '; ' + str(z))
         else:
             form.textBrowser_3.setText('Введите трехмерных вектор')
-
+class help:
+    def helpSkalar(self):
+        form.textBrowser.setText('Для ввода значениий заполните графы А и B. \nПосле чего нажмите на интересующую вас '
+                                 'операцию и вы увидите результат ее выполения в этомже окне.')
+    def helpVector(self):
+        form.textBrowser_3.setText('Для ввода значениий скалярного значения заполните грфу "Скаляр". Для ввода веторов и '
+                                 'массиво используйте файлы а.csv и b.csv. Векторные значения заполняются сторого по '
+                                 'столбцам. После чего нажмите на интересующую вас операцию и вы увидите результат ее '
+                                 'выполения в этомже окне, а также оо будет загружен в файл end.csv находящийся в корне '
+                                 'программы.')
+    def helpArray(self):
+        form.textBrowser_2.setText('Для ввода значениий скалярного значения заполните грфу "Скаляр". Для ввода веторов и '
+                                 'массиво используйте файлы а.csv и b.csv. Векторные значения заполняются сторого по '
+                                 'столбцам. После чего нажмите на интересующую вас операцию и вы увидите результат ее '
+                                 'выполения в этомже окне, а также оо будет загружен в файл end.csv находящийся в корне '
+                                 'программы.')
 #Вызов метода в форме
 form.Summ.clicked.connect(Skalar.summAB)
 form.Inver.clicked.connect(Skalar._A)
@@ -353,4 +368,8 @@ form.DilinnaVectora.clicked.connect(Vector.DlinnaVectora)
 form.VectoSoNoprav.clicked.connect(Vector.CoNapravlen)
 form.OrtoganalVectora.clicked.connect(Vector.Ortogon)
 form.VectorMull3D.clicked.connect(Vector.VectornoeProizv)
+
+form.HelpS.clicked.connect(help.helpSkalar)
+form.HelpV.clicked.connect(help.helpVector)
+form.HelpM.clicked.connect(help.helpArray)
 app.exec()

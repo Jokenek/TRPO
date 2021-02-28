@@ -163,6 +163,19 @@
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="HelpS">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Help</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="vector">
     <attribute name="title">
@@ -318,6 +331,19 @@
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="HelpV">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Help</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="array">
     <attribute name="title">
@@ -458,6 +484,19 @@
        <width>161</width>
        <height>161</height>
       </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="HelpM">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Help</string>
      </property>
     </widget>
    </widget>
