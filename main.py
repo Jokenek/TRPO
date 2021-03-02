@@ -51,7 +51,6 @@ class Skalar:
             ctg = '-'
         form.textBrowser.setText('sin(A)= ' + str(sin) +'\n'+ 'cos(A)= ' + str(cos) +'\n'
                                  +'tg(A)= ' + str(tg) +'\n'+'ctg(A)= ' + str(ctg) +'\n')
-
 #Все операции матриц
 class Ar:
     def arrayAB(self):
@@ -134,19 +133,21 @@ class Ar:
     def arrayAVector(self):
         dataA = pd.read_csv("a.csv", sep=";", header=None)
         dataB = pd.read_csv("b.csv", sep=";", header=None)
-        b = dataB.values.tolist()[0]
         a = dataA.shape
-        m = a[1]
-        n = a[0]
+        b = dataB.shape
+        m = b[0]
+        n = b[1]
+        bV = dataB.values.tolist()[0]
+        g = 0
         f = open('end.csv', 'w')
-        for j in range(n):
-            for i in range(m):
-                g = dataA[i][j]*b[i]
-                if i == (m-1):
-                    f.write(str(g))
-                else:
-                    f.write(str(g) + ' ;')
-            f.write('\n')
+        for i in range(n):
+            for j in range(m):
+                g += dataA[j][i] * bV[j]
+            if i == (m - 1):
+                f.write(str(g))
+            else:
+                f.write(str(g) + ' ;')
+            g = 0
         f.close()
         dataEND = pd.read_csv("end.csv", sep=";", header=None)
         form.textBrowser_2.setText(str(dataEND))
@@ -225,19 +226,21 @@ class Vector:
     def vectorArray(self):
         dataA = pd.read_csv("a.csv", sep=";", header=None)
         dataB = pd.read_csv("b.csv", sep=";", header=None)
-        b = dataA.values.tolist()[0]
-        a = dataB.shape
-        m = a[1]
-        n = a[0]
+        a = dataA.shape
+        b = dataB.shape
+        m = b[0]
+        n = b[1]
+        bV = dataB.values.tolist()[0]
+        g = 0
         f = open('end.csv', 'w')
-        for j in range(n):
-            for i in range(m):
-                g = dataB[i][j] * b[i]
-                if i == (m - 1):
-                    f.write(str(g))
-                else:
-                    f.write(str(g) + ' ;')
-            f.write('\n')
+        for i in range(n):
+            for j in range(m):
+                g += dataA[j][i] * bV[j]
+            if i == (m - 1):
+                f.write(str(g))
+            else:
+                f.write(str(g) + ' ;')
+            g = 0
         f.close()
         dataEND = pd.read_csv("end.csv", sep=";", header=None)
         form.textBrowser_3.setText(str(dataEND))
